@@ -25,7 +25,7 @@ def main():
 
     while True:
         try:
-            t = os.popen("uptime -p").read()[:-1]
+            t = os.popen("uptime -p").read()
             print(t)
             adafruit_client.send_data(config.FEED_NAME, t)
             time.sleep(config.SEND_INTERVAL_SECONDS)
